@@ -10,8 +10,20 @@ st.set_page_config(page_title="DR Models",
                 layout="wide"
 )
 
-df = pd.read_csv("data.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
-# df = pd.read_excel(...)  # will work for Excel files
+# Add a selectbox to the sidebar to select the dataset
+dataset = st.sidebar.selectbox(
+    "Select Dataset",
+    options=['ES', 'CL'],
+    index=0,
+    key="dataset"
+)
+
+# Load the corresponding dataset
+if dataset == 'ES':
+    df = pd.read_csv("data.csv")
+elif dataset == 'CL':
+    df = pd.read_csv("data_cl.csv")
+
 
 
 ##st.dataframe(df)
@@ -196,9 +208,9 @@ with rdr_tab:
         percentages = rdr_model_counts / total_filtered * 100
 
         fig = plt.figure(figsize=(5.5, 3.5))
-        fig.patch.set_facecolor('#0d1117')
+        fig.patch.set_facecolor('#3d3d3d')
         ax = plt.gca()
-        ax.set_facecolor('#0d1117')
+        ax.set_facecolor('#3d3d3d')
 
         def to_percent(y, position):
             return f'{y:.0f}%'
@@ -254,9 +266,9 @@ with col3:
     percentages = rdr_true_counts / total_filtered * 100
 
     fig = plt.figure(figsize=(5.5, 3.5))
-    fig.patch.set_facecolor('#0d1117')
+    fig.patch.set_facecolor('#3d3d3d')
     ax = plt.gca()
-    ax.set_facecolor('#0d1117')
+    ax.set_facecolor('#3d3d3d')
 
     def to_percent(y, position):
         return f'{y:.0f}%'
@@ -305,9 +317,9 @@ with col4:
     percentages = rdr_box_color_counts / total_filtered * 100
 
     fig = plt.figure(figsize=(5.5, 3.5))
-    fig.patch.set_facecolor('#0d1117')
+    fig.patch.set_facecolor('#3d3d3d')
     ax = plt.gca()
-    ax.set_facecolor('#0d1117')
+    ax.set_facecolor('#3d3d3d')
 
     def to_percent(y, position):
         return f'{y:.0f}%'
@@ -354,9 +366,9 @@ with col5:
     percentages = rdr_confirmation_counts / total_filtered * 100
 
     fig = plt.figure(figsize=(5.5, 3.5))
-    fig.patch.set_facecolor('#0d1117')
+    fig.patch.set_facecolor('#3d3d3d')
     ax = plt.gca()
-    ax.set_facecolor('#0d1117')
+    ax.set_facecolor('#3d3d3d')
 
     def to_percent(y, position):
         return f'{y:.0f}%'
