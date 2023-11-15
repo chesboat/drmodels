@@ -208,9 +208,9 @@ with rdr_tab:
         percentages = rdr_model_counts / total_filtered * 100
 
         fig = plt.figure(figsize=(5.5, 3.5))
-        fig.patch.set_facecolor('#3d3d3d')
+        fig.patch.set_facecolor('#0d1118')
         ax = plt.gca()
-        ax.set_facecolor('#3d3d3d')
+        ax.set_facecolor('#0d1118')
 
         def to_percent(y, position):
             return f'{y:.0f}%'
@@ -266,9 +266,9 @@ with col3:
     percentages = rdr_true_counts / total_filtered * 100
 
     fig = plt.figure(figsize=(5.5, 3.5))
-    fig.patch.set_facecolor('#3d3d3d')
+    fig.patch.set_facecolor('#0d1118')
     ax = plt.gca()
-    ax.set_facecolor('#3d3d3d')
+    ax.set_facecolor('#0d1118')
 
     def to_percent(y, position):
         return f'{y:.0f}%'
@@ -317,9 +317,9 @@ with col4:
     percentages = rdr_box_color_counts / total_filtered * 100
 
     fig = plt.figure(figsize=(5.5, 3.5))
-    fig.patch.set_facecolor('#3d3d3d')
+    fig.patch.set_facecolor('#0d1118')
     ax = plt.gca()
-    ax.set_facecolor('#3d3d3d')
+    ax.set_facecolor('#0d1118')
 
     def to_percent(y, position):
         return f'{y:.0f}%'
@@ -366,9 +366,9 @@ with col5:
     percentages = rdr_confirmation_counts / total_filtered * 100
 
     fig = plt.figure(figsize=(5.5, 3.5))
-    fig.patch.set_facecolor('#3d3d3d')
+    fig.patch.set_facecolor('#0d1118')
     ax = plt.gca()
-    ax.set_facecolor('#3d3d3d')
+    ax.set_facecolor('#0d1118')
 
     def to_percent(y, position):
         return f'{y:.0f}%'
